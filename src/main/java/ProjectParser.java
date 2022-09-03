@@ -17,7 +17,7 @@ public class ProjectParser {
         return gson.toJson(list, listType);
     }
 
-    public void writeJson(String json, String path) {
+    public File writeJson(String json, String path) {
         File file = new File(path);
         try {
             if (file.createNewFile()) {
@@ -33,6 +33,8 @@ public class ProjectParser {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return file;
     }
+
 
 }

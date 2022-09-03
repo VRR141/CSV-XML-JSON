@@ -10,7 +10,7 @@ public class Main {
         String pathCSV = "CSV new_data.json";
 
         String fileNameXML = "XML data.xml";
-        String pathXML = "XML new data.json";
+        String pathXML = "XML new_data.json";
 
 
         //CSV -> JSON

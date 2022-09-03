@@ -24,7 +24,6 @@ public class ProjectJSONParser extends ProjectParser {
             e.printStackTrace();
         }
         sb.append("something troubles");
-        System.out.println(sb);
         return sb.toString();
     }
 

@@ -33,13 +33,14 @@ public class ProjectXMLParser extends ProjectParser {
         }
         return list;
     }
+
     private void innerParseXML(String path) {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(new File(path));
             Node root = doc.getDocumentElement();
-            System.out.println("\nCSV -> JSON");
+            System.out.println("\nXML -> JSON");
             System.out.println("Корневой элемент: " + root.getNodeName() + "\n");
             readXML(root);
         } catch (ParserConfigurationException | IOException | SAXException e) {
