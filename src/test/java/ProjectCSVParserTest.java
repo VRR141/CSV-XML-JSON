@@ -1,3 +1,4 @@
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -5,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ProjectCSVParserTest extends ProjectTest{
@@ -51,6 +54,8 @@ public class ProjectCSVParserTest extends ProjectTest{
         List<Employee> actual = sut.parseCSV(columnMapping, fileNameCSV);
 
         //assert
+        assertThat(actual, is(not(empty())));
+
         for (int i = 0; i < actual.size(); i++) {
             assertEquals(expected.get(i), actual.get(i));
         }

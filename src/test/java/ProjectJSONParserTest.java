@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ProjectJSONParserTest extends ProjectTest {
@@ -37,6 +39,8 @@ public class ProjectJSONParserTest extends ProjectTest {
         String actual = sut.readString(pathXML);
 
         //assert
+
+        assertThat(actual, equalTo(expected));
         assertEquals(expected.length(), actual.length());
         assertEquals(expected, actual);
     }
@@ -66,7 +70,7 @@ public class ProjectJSONParserTest extends ProjectTest {
         List<Employee> actual = sut.jsonToList(json);
 
         //assert
-
+        assertThat(actual, hasSize(2));
         assertEquals(expected, actual);
     }
 
